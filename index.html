@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+  
+  <body>
+    <br><br>
+    <header class="jumbotron">
+      <h1 class="title">Weather Dashboard</h1>
+      <h2 class="5_days">5 days</h2>
+    </header>
+
+
+
+    <div class="flex-container">
+      <h2>Weather Check</h2>
+      <div><form id="city_form">
+        <label>Search City</label><br>
+        <input type="form" value="Search City" size="40px" id="city_input">
+        <button type="button" class="start_button" onclick="submitForm()">Search</button>
+      </form></div>
+    </div>
+    <br>
+
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm 1st_column">
+          <div class="card" style="width: 15rem;">
+            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+            <div class="card-body-0">
+              <h5 class="card-title date-0"></h5>
+              <p class="card-text"></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item temp_low-0">Lo</li>
+              <li class="list-group-item temp-0">Av</li>
+              <li class="list-group-item temp_hi-0">Hi</li>
+              <li class="list-group-item humidity-0">Humidity</li>
+              <li class="list-group-item wind-0">Wind</li>
+              <li class="list-group-item uv-0">UV</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-sm 2nd_column">
+          <div class="card" style="width: 15rem;">
+            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+            <div class="card-body-1">
+              <h5 class="card-title date-1"></h5>
+              <p class="card-text"></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item temp_low-1">Lo</li>
+              <li class="list-group-item temp-1">Av</li>
+              <li class="list-group-item temp_hi-1">Hi</li>
+              <li class="list-group-item humidity-1">Humidity</li>
+              <li class="list-group-item wind-1">Wind</li>
+              <li class="list-group-item uv-1">UV</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="col-sm 3rd column">
+        <div class="card" style="width: 15rem;">
+          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+          <div class="card-body-1">
+            <h5 class="card-title date-2"></h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item temp_low-2">Lo</li>
+            <li class="list-group-item temp-2">Av</li>
+            <li class="list-group-item temp_hi-2">Hi</li>
+            <li class="list-group-item humidity-2">Humidity</li>
+            <li class="list-group-item wind-2">Wind</li>
+            <li class="list-group-item uv-2">UV</li>
+          </ul>
+          </div>
+        </div>
+
+        <div class="col-sm 4th column">
+          <div class="card" style="width: 15rem;">
+            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+            <div class="card-body-1">
+              <h5 class="card-title date-3"></h5>
+              <p class="card-text"></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item temp_low-3">Lo</li>
+              <li class="list-group-item temp-3">Av</li>
+              <li class="list-group-item temp_hi-3">Hi</li>
+              <li class="list-group-item humidity-3">Humidity</li>
+              <li class="list-group-item wind-3">Wind</li>
+              <li class="list-group-item uv-3">UV</li>
+            </ul>
+            </div>
+          </div>
+
+          <div class="col-sm 5th column">
+            <div class="card" style="width: 15rem;">
+              <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+              <div class="card-body-1">
+                <h5 class="card-title date-4"></h5>
+                <p class="card-text"></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item temp_low-4">Lo</li>
+                <li class="list-group-item temp-4">Av</li>
+                <li class="list-group-item temp_hi-4">Hi</li>
+                <li class="list-group-item humidity-4">Humidity</li>
+                <li class="list-group-item wind-4">Wind</li>
+                <li class="list-group-item uv-4">UV</li>
+              </ul>
+              </div>
+            </div>
+
+            <div class="col-sm 6th column">
+              <div class="card" style="width: 15rem;">
+                <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                <div class="card-body-1">
+                  <h5 class="card-title date-5"></h5>
+                  <p class="card-text"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item temp_low-5">Lo</li>
+                  <li class="list-group-item temp-5">Av</li>
+                  <li class="list-group-item temp_hi-5">Hi</li>
+                  <li class="list-group-item humidity-5">Humidity</li>
+                  <li class="list-group-item wind-5">Wind</li>
+                  <li class="list-group-item uv-5">UV</li>
+                </ul>
+                </div>
+              </div>
+   
+       
+    </div>
+
+  </div>
+<br><br>
+  <footer class="selected_cities">
+    Here are the buttons
+  </footer>
+
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</html>
