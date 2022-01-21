@@ -4,24 +4,33 @@ var card_content = []
 var UV_list = []
 //var cities = localStorage.getItem('stored_city') || []
 var cities = []
+var city_name;
 
 
-
-function new_city_button(city_name) {
-    city_name = document.getElementById("city_input").value 
+function new_city_button(cityName) {
+    console.log(cityName)
     var button = document.createElement("button");
     button.type = button
     button.className = 'btn-styled'
-    button.innerHTML = city_name 
-    button.value = city_name
+    button.innerHTML = cityName 
+    button.value = cityName
     document.querySelector(".selected_cities").append(button);
-    //button.addEventListener("click", (event, city_name) => get_weather_data(event, city_name))
+    button.addEventListener("click", (event) => get_weather_data(event))
 }
 
-
-function get_weather_data(event, city_name) {
+function get_weather_data(event) {
     event.preventDefault();
-    city_name = document.getElementById("city_input").value; 
+    console.log(event.target.value)
+    
+    if (!event.target.value) {
+        city_name = document.getElementById("city_input").value;
+
+    } else {
+        city_name = event.target.value;
+    }
+    
+
+
     cities.push(city_name)
     city_name_stringy = JSON.stringify(city_name);
     city_name_parsed = JSON.parse(city_name_stringy)
@@ -43,7 +52,7 @@ fetch(new_string
 
         //name of the city
         console.log(data.city.name);
-        city_name = data.city.name
+        //city_name = data.city.name
 
         //date
         current = (moment().format('Do MMM YYYY'))
@@ -87,8 +96,22 @@ fetch(new_string
 
         fetch_lat_lon().then(function (ll_data){
         console.log(ll_data);
-        var youvee = ll_data.current.uvi
-        console.log(ll_data.current.uvi)
+        var youvee = ll_data.daily.uvi
+        console.log(ll_data.daily[0].uvi)
+        
+        for (i = 0; i < 6; i++) {
+            UV_list[i] = []
+            UV_list[i].push(ll_data.daily[i].uvi)
+        }
+        console.log(UV_list)
+        console.log(UV_list[0].toString())
+
+        $(".uv-0").text("UV " + UV_list[0]);
+        $(".uv-1").text("UV " + UV_list[1]);
+        $(".uv-2").text("UV " + UV_list[2]);
+        $(".uv-3").text("UV " + UV_list[3]);
+        $(".uv-4").text("UV " + UV_list[4]);
+        $(".uv-5").text("UV " + UV_list[5]);
 
         })
 
@@ -101,8 +124,18 @@ fetch(new_string
             console.log("temp_max: " + data.list[i].main.temp_max.toString());
             console.log(data.list[i].main.humidity.toString())
             console.log(data.list[i].wind.speed.toString())
+            
             //var card_content = [city_name, date, temp_min, temp, temp_max, humidity, wind, UV]
             }
+
+            // console.log(data.list[0].weather[0].icon)
+            // var iconcode = data.list[0].weather[0].icon.toString()
+            // var iconurl = "http://openweathermap.org/img/wn/" + iconcode + ".png";
+            // var image = new Image();
+            // image.src = iconurl
+            // $(".title").src(image);
+            // console.log(iconurl)
+
             console.log(card_content[1][1])
             $(".date-0").text(card_content[0][1])
             $(".temp_low-0").text("Lo  " + card_content[0][2] + " °C")
@@ -147,7 +180,7 @@ fetch(new_string
             $(".wind-5").text(" " + card_content[5][6] + " MPH")
 
            
-            new_city_button();
+            new_city_button(city_name);
 
     })
     .catch(err => {
