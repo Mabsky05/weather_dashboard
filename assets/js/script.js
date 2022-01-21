@@ -1,8 +1,10 @@
 var date_list = []
 //var card_content = [city_name, date, temp_min, temp, temp_max, humidity, wind, UV]
 var card_content = []
-
 var UV_list = []
+//var cities = localStorage.getItem('stored_city') || []
+var cities = []
+
 
 //new button will call get_weather_data with city_name = localstorage value
 function new_city_button() {
@@ -11,21 +13,36 @@ function new_city_button() {
     button.className = 'btn-styled'
     button.innerHTML = city_name 
     button.value = city_name
-    
     document.querySelector(".selected_cities").append(button);
 }
 
-$('btn-styled').click(function(){
-    
-    get_weather_data()
-})
 
 function get_weather_data(event) {
     event.preventDefault();
 
     city_name = document.getElementById("city_input").value
+    cities.push(city_name)
+    city_name_stringy = JSON.stringify(city_name);
+    city_name_parsed = JSON.parse(city_name_stringy)
+    localStorage.setItem("stored_city", city_name_stringy);
+    city_name_latest = localStorage.getItem("stored_city")
+    console.log(cities);
+
+    function new_city_button() {
+        var button = document.createElement("button");
+        button.type = button
+        button.className = 'btn-styled'
+        button.innerHTML = city_name 
+        button.value = city_name
+        document.querySelector(".selected_cities").append(button);
+        //button.addEventListener('click', get_weather_data())
+    }
+
+    new_city_button();
+ 
     
-    new_string = "https://api.openweathermap.org/data/2.5/forecast?q=" + city_name + "&units=metric" + "&appid=b8189352df9b1ef48c68b566e80c335a"
+    new_string = ("https://api.openweathermap.org/data/2.5/forecast?q=" + city_name_latest + "&units=metric" + "&appid=b8189352df9b1ef48c68b566e80c335a") && 
+    ("https://api.openweathermap.org/data/2.5/forecast?q=" + city_name + "&units=metric" + "&appid=b8189352df9b1ef48c68b566e80c335a")
 
 
 fetch(new_string
@@ -141,7 +158,7 @@ fetch(new_string
             $(".humidity-5").text(" " + card_content[5][5] + " %")
             $(".wind-5").text(" " + card_content[5][6] + " MPH")
 
-            new_city_button();
+           
 
 
     })
