@@ -6,21 +6,22 @@ var UV_list = []
 var cities = []
 
 
-function new_city_button() {
+
+function new_city_button(city_name) {
+    city_name = document.getElementById("city_input").value 
     var button = document.createElement("button");
     button.type = button
     button.className = 'btn-styled'
     button.innerHTML = city_name 
     button.value = city_name
     document.querySelector(".selected_cities").append(button);
-    button.addEventListener("click", (e) => get_weather_data(e))
+    //button.addEventListener("click", (event, city_name) => get_weather_data(event, city_name))
 }
 
 
-function get_weather_data(event) {
+function get_weather_data(event, city_name) {
     event.preventDefault();
-
-    city_name = document.getElementById("city_input").value
+    city_name = document.getElementById("city_input").value; 
     cities.push(city_name)
     city_name_stringy = JSON.stringify(city_name);
     city_name_parsed = JSON.parse(city_name_stringy)
