@@ -2,13 +2,30 @@ var date_list = []
 //var card_content = [city_name, date, temp_min, temp, temp_max, humidity, wind, UV]
 var card_content = []
 
-//new button will call get_weather_data with city_name = localstorage value
+var UV_list = []
 
+//new button will call get_weather_data with city_name = localstorage value
+function new_city_button() {
+    var button = document.createElement("button");
+    button.type = button
+    button.className = 'btn-styled'
+    button.innerHTML = city_name 
+    button.value = city_name
+    
+    document.querySelector(".selected_cities").append(button);
+}
+
+$('btn-styled').click(function(){
+    
+    get_weather_data()
+})
 
 function get_weather_data(event) {
     event.preventDefault();
-    var city_name = document.getElementById("city_input").value 
-    var new_string = "https://api.openweathermap.org/data/2.5/forecast?q=" + city_name + "&units=metric" + "&appid=b8189352df9b1ef48c68b566e80c335a"
+
+    city_name = document.getElementById("city_input").value
+    
+    new_string = "https://api.openweathermap.org/data/2.5/forecast?q=" + city_name + "&units=metric" + "&appid=b8189352df9b1ef48c68b566e80c335a"
 
 
 fetch(new_string
@@ -67,6 +84,7 @@ fetch(new_string
         console.log(ll_data);
         var youvee = ll_data.current.uvi
         console.log(ll_data.current.uvi)
+
         })
 
         for (i = 0; i < 6; i++) {
@@ -82,48 +100,49 @@ fetch(new_string
             }
             console.log(card_content[1][1])
             $(".date-0").text(card_content[0][1])
-            $(".temp_low-0").text("Lo " + card_content[0][2] + " °C")
-            $(".temp-0").append(" " + card_content[0][3] + " °C")
-            $(".temp_hi-0").append(" " + card_content[0][4] + " °C")
-            $(".humidity-0").append(" " + card_content[0][5] + " %")
-            $(".wind-0").append(" " + card_content[0][6] + " MPH")
+            $(".temp_low-0").text("Lo  " + card_content[0][2] + " °C")
+            $(".temp-0").text("Av  " + card_content[0][3] + " °C")
+            $(".temp_hi-0").text("Hi  " + card_content[0][4] + " °C")
+            $(".humidity-0").text("Humidity " + + card_content[0][5] + " %")
+            $(".wind-0").text("Wind    " + card_content[0][6] + " MPH")
 
             $(".date-1").text(card_content[1][1])
-            $(".temp_low-1").append(" " + card_content[1][2] + " °C")
-            $(".temp-1").append(" " + card_content[1][3] + " °C")
-            $(".temp_hi-1").append(" " + card_content[1][4] + " °C")
-            $(".humidity-1").append(" " + card_content[1][5] + " %")
-            $(".wind-1").append(" " + card_content[1][6] + " MPH")
+            $(".temp_low-1").text(" " + card_content[1][2] + " °C")
+            $(".temp-1").text(" " + card_content[1][3] + " °C")
+            $(".temp_hi-1").text(" " + card_content[1][4] + " °C")
+            $(".humidity-1").text(" " + card_content[1][5] + " %")
+            $(".wind-1").text(" " + card_content[1][6] + " MPH")
 
-            $(".date-2").append(card_content[2][1])
-            $(".temp_low-2").append(" " + card_content[2][2] + " °C")
-            $(".temp-2").append(" " + card_content[2][3] + " °C")
-            $(".temp_hi-2").append(" " + card_content[2][4] + " °C")
-            $(".humidity-2").append(" " + card_content[2][5] + " %")
-            $(".wind-2").append(" " + card_content[2][6] + " MPH")
+            $(".date-2").text(card_content[2][1])
+            $(".temp_low-2").text(" " + card_content[2][2] + " °C")
+            $(".temp-2").text(" " + card_content[2][3] + " °C")
+            $(".temp_hi-2").text(" " + card_content[2][4] + " °C")
+            $(".humidity-2").text(" " + card_content[2][5] + " %")
+            $(".wind-2").text(" " + card_content[2][6] + " MPH")
 
-            $(".date-3").append(card_content[3][1])
-            $(".temp_low-3").append(" " + card_content[3][2] + " °C")
-            $(".temp-3").append(" " + card_content[3][3] + " °C")
-            $(".temp_hi-3").append(" " + card_content[3][4] + " °C")
-            $(".humidity-3").append(" " + card_content[3][5] + " %")
-            $(".wind-3").append(" " + card_content[3][6] + " MPH")
+            $(".date-3").text(card_content[3][1])
+            $(".temp_low-3").text(" " + card_content[3][2] + " °C")
+            $(".temp-3").text(" " + card_content[3][3] + " °C")
+            $(".temp_hi-3").text(" " + card_content[3][4] + " °C")
+            $(".humidity-3").text(" " + card_content[3][5] + " %")
+            $(".wind-3").text(" " + card_content[3][6] + " MPH")
 
-            $(".date-4").append(card_content[4][1])
-            $(".temp_low-4").append(" " + card_content[4][2] + " °C")
-            $(".temp-4").append(" " + card_content[4][3] + " °C")
-            $(".temp_hi-4").append(" " + card_content[4][4] + " °C")
-            $(".humidity-4").append(" " + card_content[4][5] + " %")
-            $(".wind-4").append(" " + card_content[4][6] + " MPH")
+            $(".date-4").text(card_content[4][1])
+            $(".temp_low-4").text(" " + card_content[4][2] + " °C")
+            $(".temp-4").text(" " + card_content[4][3] + " °C")
+            $(".temp_hi-4").text(" " + card_content[4][4] + " °C")
+            $(".humidity-4").text(" " + card_content[4][5] + " %")
+            $(".wind-4").text(" " + card_content[4][6] + " MPH")
             
-            $(".date-5").append(card_content[5][1])
-            $(".temp_low-5").append(" " + card_content[5][2] + " °C")
-            $(".temp-5").append(" " + card_content[5][3] + " °C")
-            $(".temp_hi-5").append(" " + card_content[5][4] + " °C")
-            $(".humidity-5").append(" " + card_content[5][5] + " %")
-            $(".wind-5").append(" " + card_content[5][6] + " MPH")
+            $(".date-5").text(card_content[5][1])
+            $(".temp_low-5").text(" " + card_content[5][2] + " °C")
+            $(".temp-5").text(" " + card_content[5][3] + " °C")
+            $(".temp_hi-5").text(" " + card_content[5][4] + " °C")
+            $(".humidity-5").text(" " + card_content[5][5] + " %")
+            $(".wind-5").text(" " + card_content[5][6] + " MPH")
 
-            document.querySelector(".selected_cities").append("HAHA");
+            new_city_button();
+
 
     })
     .catch(err => {
@@ -142,7 +161,7 @@ function fetch_lat_lon() {
 
 document.querySelector("#city_form").addEventListener('submit', get_weather_data);
 
-document.querySelector("#city_form").addEventListener('submit', myFunction());
+//document.querySelector("#city_form").addEventListener('submit', myFunction());
 
 //document.querySelector("#city_form").addEventListener('onclick', $(".card").empty());
 //$("#city_form")[0].reset();
