@@ -15,12 +15,12 @@ Clicking on the button will re-display information for that city.
 Refreshing the page will reset all buttons and the website. 
 
 Weather information per card includes date up to six days, and for each date:
-Low Temperature (°C)
-Average Temperature (°C)
-High Temperature (°C)
-Humidity (%)
-Wind (m/ph)
-UV (index)
+Low Temperature (°C) <br>
+Average Temperature (°C) <br>
+High Temperature (°C) <br>
+Humidity (%) <br>
+Wind (m/ph) <br>
+UV (index) <br>
 
 ## Log / Milestones
 ### 24/01/22
