@@ -3,7 +3,7 @@
 ![alt text](assets/images/sample.jpg)
 
 ## Summary
-A site presenting city weather forecasts
+A site presenting city weather forecasts.
 
 ## Description / Instructions
 Upon loading: Site will show app header, form for city entry, and six cards for the forecast. 
