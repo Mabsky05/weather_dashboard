@@ -1,5 +1,7 @@
 # Weather Dashboard
 
+![alt text](assets/images/sample.jpg)
+
 ## Summary
 A site presenting city weather forecasts
 
@@ -12,9 +14,15 @@ Clicking on the button will re-display information for that city.
 
 Refreshing the page will reset all buttons and the website. 
 
+## Log / Milestones
+### 24/01/22
+Final upload and readme edit
 
-## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ![alt text](assets/sample.jpg)
+### 21/01/22
+Fully working code. Cosmetic/minor edits. 
+
+### 20/01/22
+First upload - base code and partial working code
+
+   
 
