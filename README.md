@@ -14,7 +14,7 @@ Clicking on the button will re-display information for that city.
 
 Refreshing the page will reset all buttons and the website. 
 
-Weather information per card includes date up to six days, and for each date:
+Weather information per card includes date up to six days, and for each date: <br>
 Low Temperature (°C) <br>
 Average Temperature (°C) <br>
 High Temperature (°C) <br>
