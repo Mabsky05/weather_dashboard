@@ -149,5 +149,5 @@ function fetch_lat_lon() {
 }
 
 //trigger
-document.querySelector("#city_form").addEventListener('click', get_weather_data);
+document.querySelector(".start_button").addEventListener('click', get_weather_data);
 document.querySelector("#city_form").addEventListener('submit', get_weather_data);
