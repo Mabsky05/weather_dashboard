@@ -29,6 +29,9 @@ UV (index) <br>
 grimdango@gmail.com
 
 ## Log 
+### 04/02/22
+Edited Search button to accommodate clicks. GIF and license to README. 
+
 ### 24/01/22
 Final upload and readme edit
 
