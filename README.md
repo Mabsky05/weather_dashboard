@@ -24,7 +24,10 @@ Humidity (%) <br>
 Wind (m/ph) <br>
 UV (index) <br>
 
-## Log / Milestones
+## Contact
+grimdango@gmail.com
+
+## Log 
 ### 24/01/22
 Final upload and readme edit
 
