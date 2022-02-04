@@ -6,12 +6,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Summary
-A (site)[https://mabsky05.github.io/weather_dashboard/] presenting city weather forecasts.
+A [site](https://mabsky05.github.io/weather_dashboard/] presenting city weather forecasts.)
 
 ## Tech
 Bootstrap, CSS, HTML, Javascript, Jquery 
 
-(Openweather API) [https://openweathermap.org/api]
+[Openweather API](https://openweathermap.org/api)
 
 
 ## Description / Instructions
