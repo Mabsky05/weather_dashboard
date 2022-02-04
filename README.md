@@ -8,6 +8,12 @@
 ## Summary
 A site presenting city weather forecasts.
 
+## Tech
+Bootstrap, CSS, HTML, Javascript, Jquery 
+
+(Openweather API) [https://openweathermap.org/api]
+
+
 ## Description / Instructions
 Upon loading: Site will show app header, form for city entry, and six cards for the forecast. 
 
